@@ -14,7 +14,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # Copy the main application
-COPY . ./
+COPY .. ./
 
 # Arguments
 ARG REACT_APP_API_BASE_URL

@@ -15,10 +15,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Build frontend
+      - name: Run frontend tests and build
         working-directory: polling-app-client
         run: |
           npm install
+          npm test -- --watchAll=false
           npm run build
 
   build-backend:
@@ -31,6 +32,6 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build backend
-        working-directory: polling-app-backend
+      - name: Run backend tests and build
+        working-directory: polling-app-server
         run: ./mvnw clean install
